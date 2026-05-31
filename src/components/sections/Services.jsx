@@ -44,7 +44,7 @@ const data = [
 
 const Services = () => {
   return (
-    <div className="flex flex-col items-center gap-8 p-10">
+    <div className="flex flex-col items-center gap-8 p-10 max-sm:p-5">
       {/* Title */}
       <div className="text-center flex flex-col gap-4">
         <span className="text-yellow-600">DOMENII DE PRACTICĂ</span>
@@ -60,7 +60,10 @@ const Services = () => {
           const Icon = el.icon;
 
           return (
-            <div className="bg-stone-900 p-5 flex flex-col gap-6 items-center text-center border border-stone-800 rounded-md hover:bg-stone-800 transition">
+            <div
+              key={el.id}
+              className="bg-stone-900 p-5 flex flex-col gap-6 items-center text-center border border-stone-800 rounded-md hover:bg-stone-800 transition"
+            >
               <Icon className="text-yellow-600 w-12 h-12" />
               <h2 className="font-serif text-xl">{el.name}</h2>
               <p className="text-stone-500 text-sm">{el.content}</p>

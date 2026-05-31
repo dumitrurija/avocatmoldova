@@ -22,14 +22,14 @@ const Hero = () => {
 
         <div className="flex gap-6 max-lg:flex-col">
           <a
-            href=""
+            href="#contact"
             className="flex items-center gap-2 bg-[#c8943f] text-stone-100 py-4 px-8 rounded-sm font-medium text-sm"
           >
             <GoLaw className="w-5 h-5" />
             SOLICITĂ CONSULTAȚIE
           </a>
           <a
-            href=""
+            href="tel:+37367679147"
             className="flex items-center gap-2 border border-[#c8943f] text-stone-100 py-4 px-8 rounded-sm font-medium text-sm"
           >
             <IoMdMail className="w-4 h-4" />

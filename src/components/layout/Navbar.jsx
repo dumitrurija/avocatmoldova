@@ -25,7 +25,7 @@ const Navbar = () => {
     <header className="fixed top-0 w-full p-5 bg-black/75 z-50">
       <nav className="flex justify-between items-center">
         {/* Logo */}
-        <div className="flex items-center gap-2">
+        <a href="/" className="flex items-center gap-2">
           <GoLaw className="h-12 w-12 text-yellow-600" />
           <div className="flex flex-col">
             <h1 className="text-2xl font-serif">AVOCAT</h1>
@@ -33,7 +33,7 @@ const Navbar = () => {
               DREPT CIVIL • FAMILIE • COMERCIAL
             </p>
           </div>
-        </div>
+        </a>
         {/* ---- */}
 
         {/* Menu Desktop */}
@@ -59,7 +59,9 @@ const Navbar = () => {
         {/* CTA */}
         <button className="flex items-center gap-2 p-2 border border-yellow-600 rounded-sm max-lg:hidden">
           <CiPhone className="w-6 h-6 text-yellow-600" />
-          <p className="">067 679 147</p>
+          <a href="tel:+37367679147" className="">
+            067 679 147
+          </a>
         </button>
         {/* --- */}
 

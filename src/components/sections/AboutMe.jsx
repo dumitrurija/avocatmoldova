@@ -3,7 +3,7 @@ import { GoLaw } from "react-icons/go";
 
 const AboutMe = () => {
   return (
-    <div className="flex items-center p-10 gap-6 max-md:flex-col">
+    <div className="flex items-center p-10 gap-6 max-md:flex-col max-sm:p-5">
       {/* Left Side */}
       <div className="w-1/2 max-md:w-full">
         <img
@@ -30,7 +30,7 @@ const AboutMe = () => {
           parcursul procesului legal.
         </p>
         <a
-          href=""
+          href="#contact"
           className="flex items-center gap-2 bg-[#c8943f] text-stone-100 py-4 px-8 rounded-sm font-medium text-sm w-fit"
         >
           <GoLaw className="w-5 h-5" />
