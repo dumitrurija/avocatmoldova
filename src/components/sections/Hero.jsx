@@ -1,4 +1,4 @@
-import heroImg from "../../assets/welcome-img.png";
+import heroImg from "../../assets/welcome-img.webp";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { FaRegStar, FaRegUser } from "react-icons/fa";
 import { GoLaw } from "react-icons/go";

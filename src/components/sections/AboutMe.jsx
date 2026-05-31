@@ -1,9 +1,12 @@
-import aboutMe from "../../assets/about-me.png";
+import aboutMe from "../../assets/about-me.webp";
 import { GoLaw } from "react-icons/go";
 
 const AboutMe = () => {
   return (
-    <div className="flex items-center p-10 gap-6 max-md:flex-col max-sm:p-5">
+    <div
+      id="about"
+      className="flex items-center p-10 gap-6 max-md:flex-col max-sm:p-5"
+    >
       {/* Left Side */}
       <div className="w-1/2 max-md:w-full">
         <img

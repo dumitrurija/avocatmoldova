@@ -44,7 +44,10 @@ const data = [
 
 const Services = () => {
   return (
-    <div className="flex flex-col items-center gap-8 p-10 max-sm:p-5">
+    <div
+      id="services"
+      className="flex flex-col items-center gap-8 p-10 max-sm:p-5"
+    >
       {/* Title */}
       <div className="text-center flex flex-col gap-4">
         <span className="text-yellow-600">DOMENII DE PRACTICĂ</span>

@@ -44,7 +44,10 @@ const data = [
 
 const Testimonials = () => {
   return (
-    <div className="flex flex-col items-center gap-8 p-10 max-sm:p-5">
+    <div
+      id="testimonials"
+      className="flex flex-col items-center gap-8 p-10 max-sm:p-5"
+    >
       {/* Titlu */}
       <div className="text-center">
         <span className="text-yellow-600">TESTIMONIALE</span>
