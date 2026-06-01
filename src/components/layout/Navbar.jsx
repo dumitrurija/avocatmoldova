@@ -5,12 +5,11 @@ import { IoClose } from "react-icons/io5";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
+  // Mobile Menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
-
-    console.log(isMobileMenuOpen);
   };
 
   useEffect(() => {
@@ -20,6 +19,60 @@ const Navbar = () => {
       document.body.classList.remove("overflow-hidden");
     }
   }, [isMobileMenuOpen]);
+  // -----------
+
+  // Observer
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
+  // --------
+
+  const links = [
+    {
+      id: 1,
+      name: "Acasă",
+      url: "home",
+    },
+    {
+      id: 2,
+      name: "Servicii",
+      url: "services",
+    },
+    {
+      id: 3,
+      name: "Despre Mine",
+      url: "about",
+    },
+    {
+      id: 4,
+      name: "Testimoniale",
+      url: "testimonials",
+    },
+    {
+      id: 5,
+      name: "Contact",
+      url: "contact",
+    },
+  ];
 
   return (
     <header className="fixed top-0 w-full p-5 bg-black/75 z-50">
@@ -38,26 +91,20 @@ const Navbar = () => {
 
         {/* Menu Desktop */}
         <ul className="flex gap-6 max-lg:hidden">
-          <li className="text-yellow-600">
-            <a href="#home">Acasă</a>
-          </li>
-          <li>
-            <a href="#about">Despre Mine</a>
-          </li>
-          <li>
-            <a href="#services">Servicii</a>
-          </li>
-          <li>
-            <a href="#testimonials">Testimoniale</a>
-          </li>
-          <li>
-            <a href="#contact">Contact</a>
-          </li>
+          {links.map((link) => (
+            <li
+              className={
+                activeSection === link.url ? "text-yellow-600" : "text-white"
+              }
+            >
+              <a href={`#${link.url}`}>{link.name}</a>
+            </li>
+          ))}
         </ul>
         {/* ------------ */}
 
         {/* CTA */}
-        <button className="flex items-center gap-2 p-2 border border-yellow-600 rounded-sm max-lg:hidden">
+        <button className="flex items-center gap-2 p-2 border border-yellow-600 rounded-sm max-lg:hidden hover:scale-105 transition cursor-pointer">
           <CiPhone className="w-6 h-6 text-yellow-600" />
           <a href="tel:+37367679147" className="">
             067 679 147
@@ -83,21 +130,21 @@ const Navbar = () => {
             </div>
 
             <ul className="flex flex-col gap-6">
-              <li className="text-yellow-600">
-                <a href="#home">Acasă</a>
-              </li>
-              <li>
-                <a href="#about">Despre Mine</a>
-              </li>
-              <li>
-                <a href="#services">Servicii</a>
-              </li>
-              <li>
-                <a href="#testimonials">Testimoniale</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
+              {links.map((link) => (
+                <li
+                  className={
+                    activeSection === link.url
+                      ? "text-yellow-600"
+                      : "text-white"
+                  }
+                  onClick={() => {
+                    // setActiveSection(link.url);
+                    setIsMobileMenuOpen(false);
+                  }}
+                >
+                  <a href={`#${link.url}`}>{link.name}</a>
+                </li>
+              ))}
             </ul>
 
             <GoLaw className="h-12 w-12 text-yellow-600" />

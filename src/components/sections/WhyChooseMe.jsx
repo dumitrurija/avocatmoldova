@@ -43,8 +43,8 @@ const WhyChooseMe = () => {
         return (
           <div key={el.id} className="flex flex-col items-center gap-2">
             <Icon className="w-10 h-10 text-yellow-600" />
-            <h2 className="font-serif text-xl text-stone-100">{el.name}</h2>
-            <p className="text-gray-300 max-md:hidden">{el.content}</p>
+            <h2 className="font-serif text-xl text-stone-300">{el.name}</h2>
+            <p className="text-stone-500 max-md:hidden">{el.content}</p>
           </div>
         );
       })}

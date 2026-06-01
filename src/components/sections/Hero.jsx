@@ -6,7 +6,8 @@ import { IoMdMail } from "react-icons/io";
 
 const Hero = () => {
   return (
-    <div
+    <section
+      id="home"
       className="flex items-center h-screen bg-center bg-cover bg-no-repeat pt-30 p-10 max-sm:p-5 max-sm:pt-30 max-sm:h-auto"
       style={{ backgroundImage: `url(${heroImg})` }}
     >
@@ -23,14 +24,14 @@ const Hero = () => {
         <div className="flex gap-6 max-lg:flex-col">
           <a
             href="#contact"
-            className="flex items-center gap-2 bg-[#c8943f] text-stone-100 py-4 px-8 rounded-sm font-medium text-sm"
+            className="flex items-center gap-2 bg-[#c8943f] text-stone-100 py-4 px-8 rounded-sm font-medium text-sm hover:bg-yellow-600 transition"
           >
             <GoLaw className="w-5 h-5" />
             SOLICITĂ CONSULTAȚIE
           </a>
           <a
             href="tel:+37367679147"
-            className="flex items-center gap-2 border border-[#c8943f] text-stone-100 py-4 px-8 rounded-sm font-medium text-sm"
+            className="flex items-center gap-2 border border-[#c8943f] text-stone-100 py-4 px-8 rounded-sm font-medium text-sm hover:bg-yellow-600 transition"
           >
             <IoMdMail className="w-4 h-4" />
             CONTACTEAZĂ-MĂ
@@ -53,7 +54,7 @@ const Hero = () => {
         </div>
       </div>
       {/* --------- */}
-    </div>
+    </section>
   );
 };
 

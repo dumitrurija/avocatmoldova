@@ -44,7 +44,7 @@ const data = [
 
 const Testimonials = () => {
   return (
-    <div
+    <section
       id="testimonials"
       className="flex flex-col items-center gap-8 p-10 max-sm:p-5"
     >
@@ -71,7 +71,15 @@ const Testimonials = () => {
             </div>
 
             <div className="flex justify-between max-lg:items-center">
-              <h2 className="text-gray-300">- {el.name}</h2>
+              <div className="text-gray-300 flex items-center gap-1">
+                <img
+                  src={el.pfp}
+                  className="h-5 w-5"
+                  referrerPolicy="no-referrer"
+                  alt={`image of ${el.name}`}
+                />
+                {el.name}
+              </div>
 
               <div className="flex">
                 {[...Array(el.stars)].map((star, i) => (
@@ -84,7 +92,7 @@ const Testimonials = () => {
         <div></div>
       </div>
       {/* ------- */}
-    </div>
+    </section>
   );
 };
 

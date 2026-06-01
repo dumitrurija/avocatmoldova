@@ -3,7 +3,7 @@ import { GoLaw } from "react-icons/go";
 
 const AboutMe = () => {
   return (
-    <div
+    <section
       id="about"
       className="flex items-center p-10 gap-6 max-md:flex-col max-sm:p-5"
     >
@@ -34,14 +34,14 @@ const AboutMe = () => {
         </p>
         <a
           href="#contact"
-          className="flex items-center gap-2 bg-[#c8943f] text-stone-100 py-4 px-8 rounded-sm font-medium text-sm w-fit"
+          className="flex items-center gap-2 bg-[#c8943f] text-stone-100 py-4 px-8 rounded-sm font-medium text-sm w-fit hover:bg-yellow-600 transition"
         >
           <GoLaw className="w-5 h-5" />
           SOLICITĂ CONSULTAȚIE
         </a>
       </div>
       {/* --------- */}
-    </div>
+    </section>
   );
 };
 
