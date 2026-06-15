@@ -1,4 +1,5 @@
 import { GoLaw } from "react-icons/go";
+import { lawyer } from "../../config/site";
 
 const Footer = () => {
   return (
@@ -9,7 +10,7 @@ const Footer = () => {
         <div className="flex flex-col">
           <h1 className="text-2xl font-serif">AVOCAT</h1>
           <p className="text-xs text-gray-400">
-            DREPT CIVIL • FAMILIE • COMERCIAL
+            {lawyer.name} • DREPT CIVIL • FAMILIE
           </p>
         </div>
       </div>
@@ -23,6 +24,7 @@ const Footer = () => {
           <a
             href="https://grandmasterlabs.com"
             target="_blank"
+            rel="noreferrer"
             className=" underline"
           >
             GrandMaster Labs
@@ -33,8 +35,8 @@ const Footer = () => {
 
       {/* Terms */}
       <div className="flex gap-2 text-gray-300 justify-end max-lg:order-2 max-lg:items-center max-sm:justify-center max-sm:flex-col max-sm:text-xs">
-        <a href="">Politica de confidentialitate</a>
-        <a href="">Termeni si conditii</a>
+        <a href="/privacy.html">Politica de confidențialitate</a>
+        <a href="/terms.html">Termeni și condiții</a>
       </div>
       {/* ----- */}
     </footer>

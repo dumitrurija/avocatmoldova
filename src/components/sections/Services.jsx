@@ -1,46 +1,4 @@
-import { RiGovernmentLine } from "react-icons/ri";
-import { IoMdPeople } from "react-icons/io";
-import { IoBriefcaseOutline } from "react-icons/io5";
-import { FaFileSignature } from "react-icons/fa";
-import { TbGavel } from "react-icons/tb";
-
-const data = [
-  {
-    id: 1,
-    name: "Drept Civil",
-    icon: RiGovernmentLine,
-    content:
-      "Asistenţă şi reprezentare in litigii civile, contracte, obligații şi răspundere civila.",
-  },
-  {
-    id: 2,
-    name: "Dreptul Familiei",
-    icon: IoMdPeople,
-    content:
-      "Divort, partaj, pensie de întreţinere, Incredinţarea copilor şi alte cauze de dreptul familiei.",
-  },
-  {
-    id: 3,
-    name: "Drept Comercial",
-    icon: IoBriefcaseOutline,
-    content:
-      "Consultanță pentru afaceri, contracte comerciale, societăţi şi reprezentare in litigii.",
-  },
-  {
-    id: 4,
-    name: "Moșteniri",
-    icon: FaFileSignature,
-    content:
-      "Deschiderea succesiunii, partaj succesoral, redactarea actelor testamentare.",
-  },
-  {
-    id: 5,
-    name: "Litigii & Reprezentare",
-    icon: TbGavel,
-    content:
-      "Reprezentare in instantele de judecată şi în fața altor autorități publice.",
-  },
-];
+import { services } from "../../config/site";
 
 const Services = () => {
   return (
@@ -59,7 +17,7 @@ const Services = () => {
 
       {/* Services */}
       <div className="grid grid-cols-5 gap-5 max-lg:grid-cols-3 max-sm:grid-cols-1">
-        {data.map((el) => {
+        {services.map((el) => {
           const Icon = el.icon;
 
           return (

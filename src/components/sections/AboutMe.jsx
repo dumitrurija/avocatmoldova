@@ -1,5 +1,6 @@
 import aboutMe from "../../assets/about-me.webp";
 import { GoLaw } from "react-icons/go";
+import { lawyer } from "../../config/site";
 
 const AboutMe = () => {
   return (
@@ -11,7 +12,7 @@ const AboutMe = () => {
       <div className="w-1/2 max-md:w-full">
         <img
           src={aboutMe}
-          alt=""
+          alt={`Avocat ${lawyer.name}`}
           className="w-full h-100 object-cover object-center rounded-md"
         />
       </div>

@@ -7,7 +7,7 @@ const data = [
     name: "Maria Burcovschi",
     pfp: "https://lh3.googleusercontent.com/a/ACg8ocKtTPpJJLNIgoGU6swztuVLL62IitLpQJcuPtDUZLPtPz7MyQ=w144-h144-p-rp-mo-br100",
     content:
-      "Am avut o experiență foarte plăcută cu această doamnă avocat. Este o profesionistă ,foarte bine pregătită și extrem de atenta. O persoană ce dă dovadă de seriozitate , amabilitate și respect . 🥰",
+      "Am avut o experiență foarte plăcută cu această doamnă avocat. Este o profesionistă foarte bine pregătită și extrem de atentă. O persoană ce dă dovadă de seriozitate, amabilitate și respect.",
     stars: 5,
   },
   {
@@ -15,21 +15,21 @@ const data = [
     name: "Lazarenco Angela",
     pfp: "https://lh3.googleusercontent.com/a/ACg8ocI2W1UEpzi_McGwOc6ZpKzI4AWoWupfA8UVAkIuE_gG_Ycjcw=w144-h144-p-rp-mo-br100",
     content:
-      "Servicii profesionale și seriozitate din partea dnei Avocat ! Mulțumesc și recomand 👍",
+      "Servicii profesionale și seriozitate din partea doamnei avocat. Mulțumesc și recomand.",
     stars: 5,
   },
   {
     id: 3,
     name: "Cristian Bolocan",
     pfp: "https://lh3.googleusercontent.com/a/ACg8ocLAptL4t-JdhQhfsP6zoGSYc5NpM4tm2xrGnxJWGas8rsNJ0Q=w144-h144-p-rp-mo-br100",
-    content: "Prestează servicii de calitate,apelați cu incredere",
+    content: "Prestează servicii de calitate, apelați cu încredere.",
     stars: 5,
   },
   {
     id: 4,
     name: "Maria Maria",
     pfp: "https://lh3.googleusercontent.com/a/ACg8ocLI6J4w4e-_yH06lbQ-2pNNVrPZuMbBuYsdjIRlo5Lf57R9UA=w144-h144-p-rp-mo-br100",
-    content: "Sunt foarte multumita pentru rezultatul obtinut",
+    content: "Sunt foarte mulțumită pentru rezultatul obținut.",
     stars: 5,
   },
   {
@@ -37,7 +37,7 @@ const data = [
     name: "Tatiana Gaina",
     pfp: "https://lh3.googleusercontent.com/a/ACg8ocIPs9m9mXG2H9tn4gSoGWKcvtOGcV3gJ9jp2C5Bzr_oMEgmlA=w144-h144-p-rp-mo-br100",
     content:
-      "persoana exceptionala care a Dat dovada de profesionalism si abilitate de neegalat.",
+      "Persoană excepțională, care a dat dovadă de profesionalism și abilitate de neegalat.",
     stars: 5,
   },
 ];
@@ -52,7 +52,7 @@ const Testimonials = () => {
       <div className="text-center">
         <span className="text-yellow-600">TESTIMONIALE</span>
         <h1 className="text-stone-100 text-4xl font-serif">
-          Ce spun clientii mei
+          Ce spun clienții mei
         </h1>
       </div>
       {/* ----- */}

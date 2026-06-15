@@ -7,5 +7,15 @@ html {
 body {
   background-color: #14130f;
   color: white;
-  height: 200vh;
+}
+
+section {
+  scroll-margin-top: 96px;
+}
+
+button,
+a,
+input,
+textarea {
+  outline-offset: 4px;
 }
