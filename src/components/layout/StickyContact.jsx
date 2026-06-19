@@ -3,6 +3,7 @@ import { FaPhoneAlt } from "react-icons/fa";
 import { FaViber, FaWhatsapp } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
 import { lawyer } from "../../config/site";
+import { useLanguage } from "../../i18n/useLanguage";
 
 const actions = [
   {
@@ -19,7 +20,7 @@ const actions = [
     className: "bg-purple-600 hover:bg-purple-500",
   },
   {
-    label: "Sună",
+    label: "call",
     href: lawyer.phoneHref,
     icon: FaPhoneAlt,
     className: "bg-[#c8943f] hover:bg-yellow-600",
@@ -27,6 +28,7 @@ const actions = [
 ];
 
 const StickyContact = () => {
+  const { t } = useLanguage();
   const [hasScrolled, setHasScrolled] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
 
@@ -52,18 +54,16 @@ const StickyContact = () => {
           type="button"
           onClick={() => setIsDismissed(true)}
           className="absolute right-3 top-3 text-stone-500 hover:text-stone-100"
-          aria-label="Închide contact rapid"
+          aria-label={t.sticky.close}
         >
           <IoClose className="h-5 w-5" />
         </button>
 
         <div className="pr-8">
           <p className="text-sm font-medium text-stone-100">
-            Aveți nevoie de ajutor?
+            {t.sticky.title}
           </p>
-          <p className="text-xs text-stone-500">
-            Alegeți metoda rapidă de contact.
-          </p>
+          <p className="text-xs text-stone-500">{t.sticky.text}</p>
         </div>
 
         <div className="grid gap-2">
@@ -79,7 +79,7 @@ const StickyContact = () => {
                 className={`flex items-center justify-center gap-2 rounded-sm px-4 py-3 text-sm font-medium text-white transition ${action.className}`}
               >
                 <Icon className="h-4 w-4" />
-                {action.label}
+                {action.label === "call" ? t.sticky.call : action.label}
               </a>
             );
           })}
@@ -91,7 +91,7 @@ const StickyContact = () => {
           type="button"
           onClick={() => setIsDismissed(true)}
           className="absolute -top-9 right-3 rounded-full border border-stone-800 bg-black/95 p-2 text-stone-400"
-          aria-label="Închide contact rapid"
+          aria-label={t.sticky.close}
         >
           <IoClose className="h-4 w-4" />
         </button>
@@ -105,13 +105,15 @@ const StickyContact = () => {
                 key={action.label}
                 href={action.href}
                 target={action.external ? "_blank" : undefined}
-                rel={action.external ? "noreferrer" : undefined}
-                className="flex min-h-16 flex-col items-center justify-center gap-1 text-xs font-medium text-stone-100"
-                aria-label={`Contact prin ${action.label}`}
-              >
-                <Icon className="h-5 w-5 text-yellow-600" />
-                {action.label}
-              </a>
+              rel={action.external ? "noreferrer" : undefined}
+              className="flex min-h-16 flex-col items-center justify-center gap-1 text-xs font-medium text-stone-100"
+              aria-label={`${t.contact.contact}: ${
+                action.label === "call" ? t.sticky.call : action.label
+              }`}
+            >
+              <Icon className="h-5 w-5 text-yellow-600" />
+              {action.label === "call" ? t.sticky.call : action.label}
+            </a>
             );
           })}
         </nav>

@@ -3,8 +3,10 @@ import { FaCopy, FaPhoneAlt } from "react-icons/fa";
 import { FaLocationDot, FaMapLocationDot, FaStar } from "react-icons/fa6";
 import { IoShieldCheckmarkOutline } from "react-icons/io5";
 import { lawyer } from "../../config/site";
+import { useLanguage } from "../../i18n/useLanguage";
 
 const GoogleProfile = () => {
+  const { t } = useLanguage();
   const [copied, setCopied] = useState(false);
 
   const handleCopyAddress = async () => {
@@ -22,13 +24,13 @@ const GoogleProfile = () => {
       <div className="border border-stone-800 bg-stone-950 p-6 rounded-md flex flex-col gap-6">
         <div className="flex items-start justify-between gap-4 max-sm:flex-col">
           <div className="flex flex-col gap-2">
-            <span className="text-yellow-600">PROFIL GOOGLE BUSINESS</span>
+            <span className="text-yellow-600">
+              {t.googleProfile.eyebrow}
+            </span>
             <h2 className="text-stone-100 text-4xl font-serif">
               {lawyer.businessName}
             </h2>
-            <p className="text-stone-400">
-              {lawyer.category} verificat local, cu birou în sectorul Botanica.
-            </p>
+            <p className="text-stone-400">{t.googleProfile.description}</p>
           </div>
 
           <div className="flex flex-col items-end max-sm:items-start">
@@ -43,7 +45,7 @@ const GoogleProfile = () => {
               </div>
             </div>
             <p className="text-sm text-stone-500">
-              {lawyer.reviewCount} recenzii Google
+              {lawyer.reviewCount} {t.googleProfile.reviews}
             </p>
           </div>
         </div>
@@ -56,21 +58,21 @@ const GoogleProfile = () => {
             className="flex items-center justify-center gap-2 bg-[#c8943f] text-stone-100 py-4 px-5 rounded-sm font-medium text-sm hover:bg-yellow-600 transition"
           >
             <FaMapLocationDot className="w-4 h-4" />
-            Direcții
+            {t.googleProfile.directions}
           </a>
           <a
             href={lawyer.phoneHref}
             className="flex items-center justify-center gap-2 border border-stone-700 text-stone-100 py-4 px-5 rounded-sm font-medium text-sm hover:border-yellow-600 transition"
           >
             <FaPhoneAlt className="w-4 h-4 text-yellow-600" />
-            Sună acum
+            {t.googleProfile.callNow}
           </a>
           <a
             href="#contact"
             className="flex items-center justify-center gap-2 border border-stone-700 text-stone-100 py-4 px-5 rounded-sm font-medium text-sm hover:border-yellow-600 transition"
           >
             <IoShieldCheckmarkOutline className="w-5 h-5 text-yellow-600" />
-            Programare
+            {t.googleProfile.appointment}
           </a>
         </div>
 
@@ -86,28 +88,32 @@ const GoogleProfile = () => {
                 className="mt-3 flex items-center gap-2 text-xs text-yellow-600 hover:text-yellow-500"
               >
                 <FaCopy className="h-3 w-3" />
-                {copied ? "Adresă copiată" : "Copiază adresa"}
+                {copied
+                  ? t.googleProfile.copiedAddress
+                  : t.googleProfile.copyAddress}
               </button>
             </div>
           </div>
 
           <div className="rounded-md border border-stone-800 p-4">
-            <p className="text-stone-100">{lawyer.ownership}</p>
-            <p className="text-stone-500">
-              Consultanță juridică pentru persoane fizice și companii.
-            </p>
+            <p className="text-stone-100">{t.googleProfile.ownership}</p>
+            <p className="text-stone-500">{t.googleProfile.counsel}</p>
           </div>
         </div>
       </div>
 
       <aside className="border border-stone-800 bg-stone-900 p-6 rounded-md">
         <div className="flex items-center justify-between gap-3">
-          <h2 className="font-serif text-2xl text-stone-100">Program</h2>
-          <span className="text-sm text-yellow-600">Cu programare</span>
+          <h2 className="font-serif text-2xl text-stone-100">
+            {t.googleProfile.schedule}
+          </h2>
+          <span className="text-sm text-yellow-600">
+            {t.googleProfile.byAppointment}
+          </span>
         </div>
 
         <div className="mt-5 flex flex-col divide-y divide-stone-800">
-          {lawyer.hours.map((item) => (
+          {t.googleProfile.hours.map((item) => (
             <div key={item.day} className="flex justify-between gap-4 py-3">
               <span className="text-stone-300">{item.day}</span>
               <span className="text-stone-500">{item.time}</span>

@@ -1,8 +1,10 @@
 import aboutMe from "../../assets/about-me.webp";
 import { GoLaw } from "react-icons/go";
-import { lawyer } from "../../config/site";
+import { useLanguage } from "../../i18n/useLanguage";
 
 const AboutMe = () => {
+  const { t } = useLanguage();
+
   return (
     <section
       id="about"
@@ -12,7 +14,7 @@ const AboutMe = () => {
       <div className="w-1/2 max-md:w-full">
         <img
           src={aboutMe}
-          alt={`Avocat ${lawyer.name}`}
+          alt={t.about.imageAlt}
           className="w-full h-100 object-cover object-center rounded-md"
         />
       </div>
@@ -20,25 +22,21 @@ const AboutMe = () => {
 
       {/* Right Side */}
       <div className="flex flex-col gap-6 w-1/2 max-md:w-full">
-        <span className="text-yellow-600">DESPRE MINE</span>
+        <span className="text-yellow-600">{t.about.eyebrow}</span>
         <h2 className="text-stone-100 text-4xl font-serif">
-          Încredere. Integritate. Reprezentare juridică.
+          {t.about.title}
         </h2>
         <p className="text-stone-300">
-          Sunt avocat licențiat în Republica Moldova și ofer asistență juridică
-          personalizată persoanelor fizice și companiilor care au nevoie de
-          sprijin profesionist în soluționarea problemelor juridice.
+          {t.about.bodyOne}
           <br /> <br />
-          Obiectivul meu este să vă ofer siguranță juridică, reprezentare
-          competentă și încrederea că aveți alături un partener dedicat pe tot
-          parcursul procesului legal.
+          {t.about.bodyTwo}
         </p>
         <a
           href="#contact"
           className="flex items-center gap-2 bg-[#c8943f] text-stone-100 py-4 px-8 rounded-sm font-medium text-sm w-fit hover:bg-yellow-600 transition"
         >
           <GoLaw className="w-5 h-5" />
-          SOLICITĂ CONSULTAȚIE
+          {t.about.cta}
         </a>
       </div>
       {/* --------- */}

@@ -4,8 +4,33 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoClose } from "react-icons/io5";
 import { useEffect, useState } from "react";
 import { lawyer, navLinks } from "../../config/site";
+import { useLanguage } from "../../i18n/useLanguage";
+
+const LanguageSelect = ({ className = "" }) => {
+  const { language, languages, setLanguage, t } = useLanguage();
+
+  return (
+    <label className={`flex items-center gap-2 ${className}`}>
+      <span className="sr-only">{t.nav.language}</span>
+      <select
+        value={language}
+        onChange={(event) => setLanguage(event.target.value)}
+        className="rounded-sm border border-stone-700 bg-black px-2 py-2 text-sm text-stone-100 outline-none focus:border-yellow-600"
+        aria-label={t.nav.language}
+      >
+        {languages.map((item) => (
+          <option key={item.code} value={item.code}>
+            {item.label}
+          </option>
+        ))}
+      </select>
+    </label>
+  );
+};
 
 const Navbar = () => {
+  const { t } = useLanguage();
+
   // Mobile Menu
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -54,9 +79,9 @@ const Navbar = () => {
         <a href="/" className="flex items-center gap-2">
           <GoLaw className="h-12 w-12 text-yellow-600" />
           <div className="flex flex-col">
-            <h1 className="text-2xl font-serif">AVOCAT</h1>
+            <h1 className="text-2xl font-serif">{t.nav.logoTitle}</h1>
             <p className="text-xs text-gray-400">
-              {lawyer.name} • DREPT CIVIL • FAMILIE
+              {lawyer.name} • {t.nav.logoSubtitle}
             </p>
           </div>
         </a>
@@ -71,11 +96,13 @@ const Navbar = () => {
                 activeSection === link.id ? "text-yellow-600" : "text-white"
               }
             >
-              <a href={`#${link.id}`}>{link.name}</a>
+              <a href={`#${link.id}`}>{t.nav.links[link.id]}</a>
             </li>
           ))}
         </ul>
         {/* ------------ */}
+
+        <LanguageSelect className="max-lg:hidden" />
 
         {/* CTA */}
         <a
@@ -92,7 +119,7 @@ const Navbar = () => {
           type="button"
           className="lg:hidden"
           onClick={toggleMobileMenu}
-          aria-label="Deschide meniul"
+          aria-label={t.nav.openMenu}
           aria-expanded={isMobileMenuOpen}
         >
           <GiHamburgerMenu className="w-5 h-5" />
@@ -104,13 +131,14 @@ const Navbar = () => {
           <div className="flex flex-col justify-between p-5 h-screen absolute inset-0 bg-black">
             <div className="flex justify-between items-center">
               <h2 className="font-serif text-2xl">
-                <span className="text-yellow-600">Avocat</span> {lawyer.name}
+                <span className="text-yellow-600">{t.nav.logoTitle}</span>{" "}
+                {lawyer.name}
               </h2>
 
               <button
                 type="button"
                 onClick={toggleMobileMenu}
-                aria-label="Închide meniul"
+                aria-label={t.nav.closeMenu}
               >
                 <IoClose className="w-6 h-6" />
               </button>
@@ -129,12 +157,15 @@ const Navbar = () => {
                     setIsMobileMenuOpen(false);
                   }}
                 >
-                  <a href={`#${link.id}`}>{link.name}</a>
+                  <a href={`#${link.id}`}>{t.nav.links[link.id]}</a>
                 </li>
               ))}
             </ul>
 
-            <GoLaw className="h-12 w-12 text-yellow-600" />
+            <div className="flex items-center justify-between">
+              <LanguageSelect />
+              <GoLaw className="h-12 w-12 text-yellow-600" />
+            </div>
           </div>
         )}
         {/* ------------- */}

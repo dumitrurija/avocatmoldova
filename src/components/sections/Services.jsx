@@ -1,6 +1,9 @@
 import { services } from "../../config/site";
+import { useLanguage } from "../../i18n/useLanguage";
 
 const Services = () => {
+  const { t } = useLanguage();
+
   return (
     <section
       id="services"
@@ -8,17 +11,18 @@ const Services = () => {
     >
       {/* Title */}
       <div className="text-center flex flex-col gap-4">
-        <span className="text-yellow-600">DOMENII DE PRACTICĂ</span>
+        <span className="text-yellow-600">{t.services.eyebrow}</span>
         <h1 className="text-stone-100 text-4xl font-serif">
-          Servicii Juridice
+          {t.services.title}
         </h1>
       </div>
       {/* ----- */}
 
       {/* Services */}
       <div className="grid grid-cols-5 gap-5 max-lg:grid-cols-3 max-sm:grid-cols-1">
-        {services.map((el) => {
+        {services.map((el, index) => {
           const Icon = el.icon;
+          const service = t.services.items[index];
 
           return (
             <div
@@ -26,8 +30,8 @@ const Services = () => {
               className="bg-stone-900 p-5 flex flex-col gap-6 items-center text-center border border-stone-800 rounded-md hover:bg-stone-800 transition"
             >
               <Icon className="text-yellow-600 w-12 h-12" />
-              <h2 className="font-serif text-xl">{el.name}</h2>
-              <p className="text-stone-500 text-sm">{el.content}</p>
+              <h2 className="font-serif text-xl">{service.name}</h2>
+              <p className="text-stone-500 text-sm">{service.content}</p>
               <hr className="w-1/3 text-yellow-600" />
             </div>
           );

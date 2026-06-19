@@ -3,7 +3,8 @@ import { IoMdMail } from "react-icons/io";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoIosSend } from "react-icons/io";
 import { useState } from "react";
-import { contactTopics, lawyer } from "../../config/site";
+import { lawyer } from "../../config/site";
+import { useLanguage } from "../../i18n/useLanguage";
 
 const initialForm = {
   name: "",
@@ -14,6 +15,7 @@ const initialForm = {
 };
 
 const ContactForm = () => {
+  const { t } = useLanguage();
   const [form, setForm] = useState(initialForm);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [result, setResult] = useState({ type: "", message: "" });
@@ -43,7 +45,7 @@ const ContactForm = () => {
           phone: form.phone,
           topic: form.topic,
           message: form.message,
-          subject: `Mesaj nou de pe avocatmoldova${
+          subject: `${t.contact.emailSubject}${
             form.topic ? ` - ${form.topic}` : ""
           }`,
         }),
@@ -52,20 +54,18 @@ const ContactForm = () => {
       const data = await res.json();
 
       if (data.success) {
-        setResult({ type: "success", message: "Mesajul a fost transmis!" });
+        setResult({ type: "success", message: t.contact.success });
         setForm(initialForm);
       } else {
         setResult({
           type: "error",
-          message:
-            "Mesajul nu a putut fi trimis. Încercați din nou sau sunați direct.",
+          message: t.contact.error,
         });
       }
     } catch {
       setResult({
         type: "error",
-        message:
-          "A apărut o eroare de conexiune. Încercați din nou sau sunați direct.",
+        message: t.contact.networkError,
       });
     } finally {
       setIsSubmitting(false);
@@ -78,48 +78,48 @@ const ContactForm = () => {
   return (
     <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
       <label className="flex flex-col gap-2 text-sm text-stone-300 max-sm:col-span-2">
-        Nume
+        {t.contact.name}
         <input
           onChange={handleChange}
           value={form.name}
           type="text"
           name="name"
           autoComplete="name"
-          placeholder="Ex: Ion Popescu"
+          placeholder={t.contact.namePlaceholder}
           required
           className={inputClass}
         />
       </label>
       <label className="flex flex-col gap-2 text-sm text-stone-300 max-sm:col-span-2">
-        Email
+        {t.contact.email}
         <input
           onChange={handleChange}
           value={form.email}
           type="email"
           name="email"
           autoComplete="email"
-          placeholder="exemplu@email.com"
+          placeholder={t.contact.emailPlaceholder}
           required
           className={inputClass}
         />
       </label>
 
       <label className="flex flex-col gap-2 text-sm text-stone-300 col-span-2">
-        Telefon
+        {t.contact.phone}
         <input
           onChange={handleChange}
           value={form.phone}
           type="tel"
           name="phone"
           autoComplete="tel"
-          placeholder="+373 67 000 000"
+          placeholder={t.contact.phonePlaceholder}
           required
           className={inputClass}
         />
       </label>
 
       <label className="flex flex-col gap-2 text-sm text-stone-300 col-span-2">
-        Problema juridică
+        {t.contact.topic}
         <select
           onChange={handleChange}
           value={form.topic}
@@ -127,8 +127,8 @@ const ContactForm = () => {
           required
           className={`${inputClass} bg-[#14130f]`}
         >
-          <option value="">Alegeți domeniul</option>
-          {contactTopics.map((topic) => (
+          <option value="">{t.contact.topicPlaceholder}</option>
+          {t.contact.topics.map((topic) => (
             <option key={topic} value={topic}>
               {topic}
             </option>
@@ -137,12 +137,12 @@ const ContactForm = () => {
       </label>
 
       <label className="flex flex-col gap-2 text-sm text-stone-300 col-span-2">
-        Mesajul dvs.
+        {t.contact.message}
         <textarea
           onChange={handleChange}
           value={form.message}
           name="message"
-          placeholder="Descrieți pe scurt problema juridică și ce rezultat doriți să obțineți."
+          placeholder={t.contact.messagePlaceholder}
           required
           rows="5"
           className={`${inputClass} resize-none`}
@@ -155,7 +155,7 @@ const ContactForm = () => {
         className="flex justify-center items-center gap-2 bg-[#c8943f] text-stone-100 py-4 px-8 rounded-sm font-medium text-sm col-span-2 hover:bg-yellow-600 transition cursor-pointer disabled:cursor-not-allowed disabled:opacity-70"
       >
         <IoIosSend className="w-5 h-5" />
-        {isSubmitting ? "Se trimite..." : "Trimite mesaj"}
+        {isSubmitting ? t.contact.submitting : t.contact.submit}
       </button>
 
       {result.message && (
@@ -173,6 +173,8 @@ const ContactForm = () => {
 };
 
 const Contact = () => {
+  const { t } = useLanguage();
+
   return (
     <section
       id="contact"
@@ -180,7 +182,7 @@ const Contact = () => {
     >
       {/* Contact */}
       <div className="flex flex-col gap-4 max-lg:order-2">
-        <span className="text-yellow-600">CONTACT</span>
+        <span className="text-yellow-600">{t.contact.contact}</span>
 
         <div className="flex items-center gap-2">
           <FaPhoneAlt className="text-yellow-600 w-5 h-5" />
@@ -220,15 +222,13 @@ const Contact = () => {
       {/* Form */}
       <div className="flex flex-col gap-4 max-lg:col-span-2 max-lg:order-1 max-sm:col-auto">
         <span className="text-yellow-600 text-center">
-          TRIMITEȚI-MI UN MESAJ
+          {t.contact.eyebrow}
         </span>
         <div className="rounded-md border border-stone-800 bg-stone-900 p-4 text-center">
-          <p className="text-sm text-stone-100">
-            Răspund de obicei în aceeași zi lucrătoare.
-          </p>
+          <p className="text-sm text-stone-100">{t.contact.responseTime}</p>
           <p className="mt-1 text-xs text-stone-500">
-            {lawyer.googleRating}/5 pe Google · {lawyer.reviewCount} recenzii ·
-            consultație cu programare
+            {lawyer.googleRating}/5 {t.contact.ratingLabel} ·{" "}
+            {lawyer.reviewCount} {t.contact.reviewsLabel} · {t.contact.proof}
           </p>
         </div>
 
@@ -239,19 +239,17 @@ const Contact = () => {
       {/* Program */}
       <div className="flex flex-col gap-4 text-right max-lg:order-3 max-sm:text-left">
         <div className="flex flex-col gap-4">
-          <span className="text-yellow-600">PROGRAM</span>
+          <span className="text-yellow-600">{t.contact.program}</span>
 
-          <p className="text-stone-100 text-sm">Luni - Vineri: 09:00 - 18:00</p>
-          <p className="text-stone-100 text-sm">
-            Sâmbătă - Duminică: 10:00 - 16:00
-          </p>
+          <p className="text-stone-100 text-sm">{t.contact.weekdays}</p>
+          <p className="text-stone-100 text-sm">{t.contact.weekend}</p>
         </div>
 
         <div className="flex flex-col gap-4">
-          <span className="text-yellow-600">Consultații</span>
+          <span className="text-yellow-600">{t.contact.consultations}</span>
 
           <p className="text-stone-100 text-sm">
-            Consultațiile se oferă în baza unei programări prealabile.
+            {t.contact.consultationsText}
           </p>
         </div>
       </div>

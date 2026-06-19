@@ -1,5 +1,6 @@
 import { FaQuoteLeft } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
+import { useLanguage } from "../../i18n/useLanguage";
 
 const data = [
   {
@@ -43,6 +44,8 @@ const data = [
 ];
 
 const Testimonials = () => {
+  const { t } = useLanguage();
+
   return (
     <section
       id="testimonials"
@@ -50,16 +53,16 @@ const Testimonials = () => {
     >
       {/* Titlu */}
       <div className="text-center">
-        <span className="text-yellow-600">TESTIMONIALE</span>
+        <span className="text-yellow-600">{t.testimonials.eyebrow}</span>
         <h1 className="text-stone-100 text-4xl font-serif">
-          Ce spun clienții mei
+          {t.testimonials.title}
         </h1>
       </div>
       {/* ----- */}
 
       {/* Reviews */}
       <div className="grid grid-cols-3 gap-5 max-lg:grid-cols-2 max-sm:grid-cols-1">
-        {data.map((el) => (
+        {data.map((el, index) => (
           <div
             key={el.id}
             className="flex flex-col justify-between gap-4 p-5 bg-stone-900 border border-stone-800 rounded-md"
@@ -67,7 +70,9 @@ const Testimonials = () => {
             <div className="flex flex-col gap-4">
               <FaQuoteLeft className="w-10 h-10 text-yellow-600" />
 
-              <p className="text-stone-100">{el.content}</p>
+              <p className="text-stone-100">
+                {t.testimonials.items[index]}
+              </p>
             </div>
 
             <div className="flex justify-between max-lg:items-center">
@@ -76,7 +81,7 @@ const Testimonials = () => {
                   src={el.pfp}
                   className="h-5 w-5"
                   referrerPolicy="no-referrer"
-                  alt={`image of ${el.name}`}
+                  alt={`${t.testimonials.imageAlt} ${el.name}`}
                 />
                 {el.name}
               </div>

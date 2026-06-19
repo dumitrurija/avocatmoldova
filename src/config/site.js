@@ -12,7 +12,7 @@ export const lawyer = {
   name: "Natalia Găină",
   brand: "Avocat Natalia Găină",
   businessName: "Avocat Moldova, Chișinău",
-  phoneDisplay: "067 679 147",
+  phoneDisplay: "+373 67 679 147",
   phoneHref: "tel:+37367679147",
   whatsappHref: "https://wa.me/37367679147",
   viberHref: "viber://chat?number=%2B37367679147",
