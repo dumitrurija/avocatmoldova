@@ -61,7 +61,7 @@ const Testimonials = () => {
       {/* ----- */}
 
       {/* Reviews */}
-      <div className="grid grid-cols-3 gap-5 max-lg:grid-cols-2 max-sm:grid-cols-1">
+      <div className="grid grid-cols-3 gap-5 max-lg:grid-cols-2 max-sm:grid-cols-1 w-full max-w-6xl">
         {data.map((el, index) => (
           <div
             key={el.id}
@@ -94,7 +94,6 @@ const Testimonials = () => {
             </div>
           </div>
         ))}
-        <div></div>
       </div>
       {/* ------- */}
     </section>

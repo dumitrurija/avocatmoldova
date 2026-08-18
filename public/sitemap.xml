@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://avocatgaina.md/</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://avocatgaina.md/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://avocatgaina.md/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://avocatgaina.md/" />
+  </url>
+  <url>
+    <loc>https://avocatgaina.md/privacy.html</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://avocatgaina.md/terms.html</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+</urlset>

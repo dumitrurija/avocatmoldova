@@ -8,8 +8,8 @@ export const translations = {
         testimonials: "Testimoniale",
         contact: "Contact",
       },
-      logoTitle: "AVOCAT",
-      logoSubtitle: "DREPT CIVIL • FAMILIE",
+      logoTitle: "NATALIA GĂINĂ",
+      logoSubtitle: "AVOCAT • DREPT CIVIL • FAMILIE",
       openMenu: "Deschide meniul",
       closeMenu: "Închide meniul",
       language: "Limbă",
@@ -198,11 +198,67 @@ export const translations = {
       call: "Sună",
     },
     footer: {
-      logoSubtitle: "DREPT CIVIL • FAMILIE",
+      logoSubtitle: "AVOCAT • DREPT CIVIL • FAMILIE",
       rights: "Toate drepturile rezervate",
       developedBy: "Elaborat de:",
       privacy: "Politica de confidențialitate",
       terms: "Termeni și condiții",
+    },
+    privacyModal: {
+      title: "Politica de confidențialitate",
+      intro:
+        "Confidențialitatea datelor dumneavoastră este o prioritate fundamentală. Datele transmise prin intermediul acestui site sunt prelucrate în conformitate cu legislația Republicii Moldova și cu normele deontologice ale profesiei de avocat.",
+      sections: [
+        {
+          heading: "1. Date colectate",
+          content:
+            "Prin formularul de contact sau apel direct, putem colecta: numele, numărul de telefon, adresa de email și detaliile sumare ale speței juridice transmise voluntar.",
+        },
+        {
+          heading: "2. Scopul prelucrării",
+          content:
+            "Informațiile sunt utilizate exclusiv pentru a vă răspunde la solicitare, pentru stabilirea programării consultației și pentru analiza preliminară a cazului.",
+        },
+        {
+          heading: "3. Secretul profesional și securitatea",
+          content:
+            "Toate informațiile transmise sunt ocrotite de secretul profesional al avocatului. Datele dumneavoastră nu sunt înstrăinate, vândute sau transmise către terți neautorizați.",
+        },
+        {
+          heading: "4. Contact",
+          content:
+            "Pentru orice solicitare privind datele dumneavoastră, puteți scrie direct la avocatnataliagaina@gmail.com sau apela la +373 67 679 147.",
+        },
+      ],
+      close: "Închide",
+    },
+    termsModal: {
+      title: "Termeni și condiții",
+      intro:
+        "Vă rugăm să citiți termenii de utilizare a acestui site web.",
+      sections: [
+        {
+          heading: "1. Caracter informativ",
+          content:
+            "Conținutul prezentat pe acest site are scop pur informativ și de prezentare profesională. Informațiile nu constituie o consultație juridică oficială în lipsa analizei actelor concrete.",
+        },
+        {
+          heading: "2. Stabilirea relației avocat - client",
+          content:
+            "Trimiterea unui mesaj prin formular nu creează automat un raport de asistență juridică. Relația profesională se naște doar după acceptarea cazului și încheierea unui contract de asistență juridică.",
+        },
+        {
+          heading: "3. Consultații și programări",
+          content:
+            "Consultațiile se oferă pe bază de programare prealabilă, la birou sau online, cu analizarea documentelor relevante.",
+        },
+        {
+          heading: "4. Drepturi de proprietate intelectuală",
+          content:
+            "Toate materialele, textele și elementele de design de pe acest site sunt protejate de drepturile de autor.",
+        },
+      ],
+      close: "Închide",
     },
   },
   en: {
@@ -214,8 +270,8 @@ export const translations = {
         testimonials: "Testimonials",
         contact: "Contact",
       },
-      logoTitle: "LAWYER",
-      logoSubtitle: "CIVIL • FAMILY LAW",
+      logoTitle: "NATALIA GĂINĂ",
+      logoSubtitle: "LAWYER • CIVIL • FAMILY LAW",
       openMenu: "Open menu",
       closeMenu: "Close menu",
       language: "Language",
@@ -403,11 +459,67 @@ export const translations = {
       call: "Call",
     },
     footer: {
-      logoSubtitle: "CIVIL • FAMILY LAW",
+      logoSubtitle: "LAWYER • CIVIL • FAMILY LAW",
       rights: "All rights reserved",
       developedBy: "Developed by:",
       privacy: "Privacy policy",
       terms: "Terms and conditions",
+    },
+    privacyModal: {
+      title: "Privacy Policy",
+      intro:
+        "The confidentiality of your data is our highest priority. Any information transmitted through this website is processed in compliance with the legislation of the Republic of Moldova and the professional ethics of the legal profession.",
+      sections: [
+        {
+          heading: "1. Collected Data",
+          content:
+            "Via the contact form or direct phone call, we may collect: your name, phone number, email address, and brief details of your legal inquiry provided voluntarily.",
+        },
+        {
+          heading: "2. Purpose of Processing",
+          content:
+            "The information is used solely to respond to your request, schedule a consultation, and perform a preliminary case assessment.",
+        },
+        {
+          heading: "3. Professional Secrecy & Security",
+          content:
+            "All transmitted information is protected by legal professional privilege. Your data is never sold, shared, or transferred to unauthorized third parties.",
+        },
+        {
+          heading: "4. Contact",
+          content:
+            "For any inquiries regarding your data, you can reach out directly to avocatnataliagaina@gmail.com or call +373 67 679 147.",
+        },
+      ],
+      close: "Close",
+    },
+    termsModal: {
+      title: "Terms and Conditions",
+      intro:
+        "Please read the terms of use for this website.",
+      sections: [
+        {
+          heading: "1. Informational Purpose",
+          content:
+            "The content on this website is for general informational and presentation purposes only. It does not constitute formal legal advice without an individual case and document review.",
+        },
+        {
+          heading: "2. Attorney-Client Relationship",
+          content:
+            "Submitting a contact message does not automatically establish an attorney-client relationship. A formal relationship is created only after case acceptance and contract signing.",
+        },
+        {
+          heading: "3. Consultations & Appointments",
+          content:
+            "Consultations are provided strictly by prior appointment, in-office or online, following an analysis of relevant documents.",
+        },
+        {
+          heading: "4. Intellectual Property",
+          content:
+            "All content, text, and design elements on this website are protected by copyright laws.",
+        },
+      ],
+      close: "Close",
     },
   },
   ru: {
@@ -419,8 +531,8 @@ export const translations = {
         testimonials: "Отзывы",
         contact: "Контакты",
       },
-      logoTitle: "АДВОКАТ",
-      logoSubtitle: "ГРАЖДАНСКОЕ • СЕМЕЙНОЕ ПРАВО",
+      logoTitle: "НАТАЛИЯ ГЭИНЭ",
+      logoSubtitle: "АДВОКАТ • ГРАЖДАНСКОЕ • СЕМЕЙНОЕ ПРАВО",
       openMenu: "Открыть меню",
       closeMenu: "Закрыть меню",
       language: "Язык",
@@ -609,11 +721,67 @@ export const translations = {
       call: "Позвонить",
     },
     footer: {
-      logoSubtitle: "ГРАЖДАНСКОЕ • СЕМЕЙНОЕ ПРАВО",
+      logoSubtitle: "АДВОКАТ • ГРАЖДАНСКОЕ • СЕМЕЙНОЕ ПРАВО",
       rights: "Все права защищены",
       developedBy: "Разработано:",
       privacy: "Политика конфиденциальности",
       terms: "Условия использования",
+    },
+    privacyModal: {
+      title: "Политика конфиденциальности",
+      intro:
+        "Конфиденциальность ваших данных является нашим главным приоритетом. Любая информация, переданная через данный сайт, обрабатывается в соответствии с законодательством Республики Молдова и нормами адвокатской этики.",
+      sections: [
+        {
+          heading: "1. Собираемые данные",
+          content:
+            "Через контактную форму или телефонный звонок могут собираться: ваше имя, номер телефона, email и краткое описание юридического вопроса, предоставленные добровольно.",
+        },
+        {
+          heading: "2. Цель обработки",
+          content:
+            "Информация используется исключительно для ответа на ваше обращение, записи на консультацию и предварительного анализа ситуации.",
+        },
+        {
+          heading: "3. Адвокатская тайна и безопасность",
+          content:
+            "Вся переданная информация защищена режимом адвокатской тайны. Ваши данные не передаются, не продаются и не раскрываются третьим лицам.",
+        },
+        {
+          heading: "4. Контакты",
+          content:
+            "По любым вопросам обработки данных вы можете написать на avocatnataliagaina@gmail.com или позвонить по телефону +373 67 679 147.",
+        },
+      ],
+      close: "Закрыть",
+    },
+    termsModal: {
+      title: "Условия использования",
+      intro:
+        "Пожалуйста, ознакомьтесь с условиями использования данного веб-сайта.",
+      sections: [
+        {
+          heading: "1. Информационный характер",
+          content:
+            "Материалы сайта носят исключительно ознакомительный характер и не являются официальной юридической консультацией без изучения конкретных документов.",
+        },
+        {
+          heading: "2. Отношения адвокат — клиент",
+          content:
+            "Отправка сообщения через форму не создает автоматически отношений адвокат-клиент. Профессиональное сотрудничество возникает только после принятия дела и подписания договора.",
+        },
+        {
+          heading: "3. Консультации и запись",
+          content:
+            "Консультации проводятся по предварительной записи — в офисе или онлайн, после изучения необходимых материалов.",
+        },
+        {
+          heading: "4. Интеллектуальная собственность",
+          content:
+            "Все тексты, материалы и элементы дизайна сайта защищены авторским правом.",
+        },
+      ],
+      close: "Закрыть",
     },
   },
 };

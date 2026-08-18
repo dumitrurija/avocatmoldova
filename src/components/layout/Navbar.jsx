@@ -10,21 +10,27 @@ const LanguageSelect = ({ className = "" }) => {
   const { language, languages, setLanguage, t } = useLanguage();
 
   return (
-    <label className={`flex items-center gap-2 ${className}`}>
-      <span className="sr-only">{t.nav.language}</span>
-      <select
-        value={language}
-        onChange={(event) => setLanguage(event.target.value)}
-        className="rounded-sm border border-stone-700 bg-black px-2 py-2 text-sm text-stone-100 outline-none focus:border-yellow-600"
-        aria-label={t.nav.language}
-      >
-        {languages.map((item) => (
-          <option key={item.code} value={item.code}>
-            {item.label}
-          </option>
-        ))}
-      </select>
-    </label>
+    <div
+      className={`inline-flex items-center rounded-sm border border-stone-800 bg-stone-950/90 p-1 text-xs ${className}`}
+      role="group"
+      aria-label={t.nav.language}
+    >
+      {languages.map((item) => (
+        <button
+          key={item.code}
+          type="button"
+          onClick={() => setLanguage(item.code)}
+          className={`px-2.5 py-1 rounded-sm transition font-medium cursor-pointer ${
+            language === item.code
+              ? "bg-[#c8943f] text-stone-950 font-bold shadow-xs"
+              : "text-stone-400 hover:text-stone-100"
+          }`}
+          aria-pressed={language === item.code}
+        >
+          {item.label}
+        </button>
+      ))}
+    </div>
   );
 };
 
@@ -73,15 +79,15 @@ const Navbar = () => {
   // --------
 
   return (
-    <header className="fixed top-0 w-full p-5 bg-black/75 z-50">
-      <nav className="flex justify-between items-center">
+    <header className="fixed top-0 w-full p-5 bg-black/85 backdrop-blur-sm z-50 border-b border-stone-900/60">
+      <nav className="flex justify-between items-center max-w-7xl mx-auto">
         {/* Logo */}
-        <a href="/" className="flex items-center gap-2">
-          <GoLaw className="h-12 w-12 text-yellow-600" />
+        <a href="#home" className="flex items-center gap-2">
+          <GoLaw className="h-10 w-10 text-yellow-600 shrink-0" />
           <div className="flex flex-col">
-            <h1 className="text-2xl font-serif">{t.nav.logoTitle}</h1>
+            <h1 className="text-lg sm:text-xl font-serif text-stone-100">{t.nav.logoTitle}</h1>
             <p className="text-xs text-gray-400">
-              {lawyer.name} • {t.nav.logoSubtitle}
+              {t.nav.logoSubtitle}
             </p>
           </div>
         </a>
@@ -96,22 +102,29 @@ const Navbar = () => {
                 activeSection === link.id ? "text-yellow-600" : "text-white"
               }
             >
-              <a href={`#${link.id}`}>{t.nav.links[link.id]}</a>
+              <a href={`#${link.id}`} className="hover:text-yellow-600 transition">
+                {t.nav.links[link.id]}
+              </a>
             </li>
           ))}
         </ul>
         {/* ------------ */}
 
-        <LanguageSelect className="max-lg:hidden" />
+        {/* Right Actions (Language + CTA) */}
+        <div className="flex items-center gap-4 max-lg:hidden">
+          <LanguageSelect />
 
-        {/* CTA */}
-        <a
-          href={lawyer.phoneHref}
-          className="flex items-center gap-2 p-2 border border-yellow-600 rounded-sm max-lg:hidden hover:scale-105 transition"
-        >
-          <CiPhone className="w-6 h-6 text-yellow-600" />
-          {lawyer.phoneDisplay}
-        </a>
+          {/* CTA */}
+          <a
+            href={lawyer.phoneHref}
+            className="flex items-center gap-2 px-3.5 py-2 border border-yellow-600 rounded-sm hover:bg-yellow-600/10 hover:scale-105 transition"
+          >
+            <CiPhone className="w-5 h-5 text-yellow-600" />
+            <span className="text-stone-100 font-medium text-sm">
+              {lawyer.phoneDisplay}
+            </span>
+          </a>
+        </div>
         {/* --- */}
 
         {/* Menu Mobile */}
@@ -130,9 +143,8 @@ const Navbar = () => {
         {isMobileMenuOpen && (
           <div className="flex flex-col justify-between p-5 h-screen absolute inset-0 bg-black">
             <div className="flex justify-between items-center">
-              <h2 className="font-serif text-2xl">
-                <span className="text-yellow-600">{t.nav.logoTitle}</span>{" "}
-                {lawyer.name}
+              <h2 className="font-serif text-xl text-yellow-600">
+                {t.nav.logoTitle}
               </h2>
 
               <button
