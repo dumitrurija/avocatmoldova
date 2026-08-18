@@ -63,7 +63,7 @@ const StickyContact = () => {
           <p className="text-sm font-medium text-stone-100">
             {t.sticky.title}
           </p>
-          <p className="text-xs text-stone-500">{t.sticky.text}</p>
+          <p className="text-xs text-stone-300">{t.sticky.text}</p>
         </div>
 
         <div className="grid gap-2">
@@ -96,24 +96,35 @@ const StickyContact = () => {
           <IoClose className="h-4 w-4" />
         </button>
 
-        <nav className="grid grid-cols-3 border-t border-stone-800 bg-black/95">
+        <nav className="grid grid-cols-3 gap-2.5 p-3 pb-6 border-t border-stone-800/80 bg-black/95 backdrop-blur-xl">
           {actions.map((action) => {
             const Icon = action.icon;
+            const isWhatsapp = action.label === "WhatsApp";
+            const isViber = action.label === "Viber";
+            const isCall = action.label === "call";
 
             return (
               <a
                 key={action.label}
                 href={action.href}
                 target={action.external ? "_blank" : undefined}
-              rel={action.external ? "noreferrer" : undefined}
-              className="flex min-h-16 flex-col items-center justify-center gap-1 text-xs font-medium text-stone-100"
-              aria-label={`${t.contact.contact}: ${
-                action.label === "call" ? t.sticky.call : action.label
-              }`}
-            >
-              <Icon className="h-5 w-5 text-yellow-600" />
-              {action.label === "call" ? t.sticky.call : action.label}
-            </a>
+                rel={action.external ? "noreferrer" : undefined}
+                className="flex items-center justify-center gap-2 py-2.5 px-2 rounded-md border border-stone-800 bg-stone-900/90 text-stone-100 text-xs font-medium hover:border-stone-700 active:scale-95 transition shadow-sm"
+                aria-label={`${t.contact.contact}: ${
+                  isCall ? t.sticky.call : action.label
+                }`}
+              >
+                <Icon
+                  className={`h-4 w-4 shrink-0 ${
+                    isWhatsapp
+                      ? "text-[#25D366]"
+                      : isViber
+                        ? "text-[#7360f2]"
+                        : "text-yellow-600"
+                  }`}
+                />
+                <span>{isCall ? t.sticky.call : action.label}</span>
+              </a>
             );
           })}
         </nav>

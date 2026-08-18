@@ -15,6 +15,10 @@ const AboutMe = () => {
         <img
           src={aboutMe}
           alt={t.about.imageAlt}
+          width="600"
+          height="400"
+          loading="lazy"
+          decoding="async"
           className="w-full h-100 object-cover object-center rounded-md"
         />
       </div>

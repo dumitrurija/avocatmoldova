@@ -44,7 +44,7 @@ const GoogleProfile = () => {
                 ))}
               </div>
             </div>
-            <p className="text-sm text-stone-500">
+            <p className="text-sm text-stone-300">
               {lawyer.reviewCount} {t.googleProfile.reviews}
             </p>
           </div>
@@ -55,7 +55,7 @@ const GoogleProfile = () => {
             href={lawyer.mapsHref}
             target="_blank"
             rel="noreferrer"
-            className="flex items-center justify-center gap-2 bg-[#c8943f] text-stone-100 py-4 px-5 rounded-sm font-medium text-sm hover:bg-yellow-600 transition"
+            className="flex items-center justify-center gap-2 bg-[#c8943f] text-stone-950 font-semibold py-4 px-5 rounded-sm text-sm hover:bg-yellow-600 transition"
           >
             <FaMapLocationDot className="w-4 h-4" />
             {t.googleProfile.directions}
@@ -81,11 +81,11 @@ const GoogleProfile = () => {
             <FaLocationDot className="mt-1 text-yellow-600" />
             <div className="flex-1">
               <p className="text-stone-100">{lawyer.address}</p>
-              <p className="text-stone-500">{lawyer.plusCode}</p>
+              <p className="text-stone-300">{lawyer.plusCode}</p>
               <button
                 type="button"
                 onClick={handleCopyAddress}
-                className="mt-3 flex items-center gap-2 text-xs text-yellow-600 hover:text-yellow-500"
+                className="mt-3 flex items-center gap-2 text-xs text-yellow-600 hover:text-yellow-500 font-medium cursor-pointer"
               >
                 <FaCopy className="h-3 w-3" />
                 {copied
@@ -97,7 +97,7 @@ const GoogleProfile = () => {
 
           <div className="rounded-md border border-stone-800 p-4">
             <p className="text-stone-100">{t.googleProfile.ownership}</p>
-            <p className="text-stone-500">{t.googleProfile.counsel}</p>
+            <p className="text-stone-300">{t.googleProfile.counsel}</p>
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@ const GoogleProfile = () => {
           <h2 className="font-serif text-2xl text-stone-100">
             {t.googleProfile.schedule}
           </h2>
-          <span className="text-sm text-yellow-600">
+          <span className="text-sm text-yellow-600 font-medium">
             {t.googleProfile.byAppointment}
           </span>
         </div>
@@ -115,8 +115,8 @@ const GoogleProfile = () => {
         <div className="mt-5 flex flex-col divide-y divide-stone-800">
           {t.googleProfile.hours.map((item) => (
             <div key={item.day} className="flex justify-between gap-4 py-3">
-              <span className="text-stone-300">{item.day}</span>
-              <span className="text-stone-500">{item.time}</span>
+              <span className="text-stone-200">{item.day}</span>
+              <span className="text-stone-300">{item.time}</span>
             </div>
           ))}
         </div>

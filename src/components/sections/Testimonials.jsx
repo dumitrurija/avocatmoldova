@@ -76,10 +76,13 @@ const Testimonials = () => {
             </div>
 
             <div className="flex justify-between max-lg:items-center">
-              <div className="text-gray-300 flex items-center gap-1">
+              <div className="text-stone-200 flex items-center gap-2 text-sm font-medium">
                 <img
                   src={el.pfp}
-                  className="h-5 w-5"
+                  width="20"
+                  height="20"
+                  loading="lazy"
+                  className="h-5 w-5 rounded-full object-cover"
                   referrerPolicy="no-referrer"
                   alt={`${t.testimonials.imageAlt} ${el.name}`}
                 />

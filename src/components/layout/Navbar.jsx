@@ -141,10 +141,10 @@ const Navbar = () => {
 
         {/* Drawer Mobile */}
         {isMobileMenuOpen && (
-          <div className="flex flex-col justify-between p-5 h-screen absolute inset-0 bg-black">
+          <div className="flex flex-col justify-between p-5 pb-16 h-screen absolute inset-0 bg-black">
             <div className="flex justify-between items-center">
-              <h2 className="font-serif text-xl text-yellow-600">
-                {t.nav.logoTitle}
+              <h2 className="font-serif text-2xl">
+                <span className="text-yellow-600">{t.nav.logoTitle}</span>
               </h2>
 
               <button
@@ -174,7 +174,7 @@ const Navbar = () => {
               ))}
             </ul>
 
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between pb-8">
               <LanguageSelect />
               <GoLaw className="h-12 w-12 text-yellow-600" />
             </div>

@@ -39,7 +39,7 @@ const ContactForm = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          access_key: "d068a0c9-919c-4a44-a832-ecea5cf39bc9",
+          access_key: "87838666-3532-446c-8c9d-6b87232ca2ae",
           name: form.name,
           email: form.email,
           phone: form.phone,
@@ -226,7 +226,7 @@ const Contact = () => {
         </span>
         <div className="rounded-md border border-stone-800 bg-stone-900 p-4 text-center">
           <p className="text-sm text-stone-100">{t.contact.responseTime}</p>
-          <p className="mt-1 text-xs text-stone-500">
+          <p className="mt-1 text-xs text-stone-300">
             {lawyer.googleRating}/5 {t.contact.ratingLabel} ·{" "}
             {lawyer.reviewCount} {t.contact.reviewsLabel} · {t.contact.proof}
           </p>

@@ -16,7 +16,7 @@ const WhyChooseMe = () => {
             <h2 className="font-serif text-xl text-stone-300">
               {reason.name}
             </h2>
-            <p className="text-stone-500 max-md:hidden">{reason.content}</p>
+            <p className="text-stone-300 max-md:hidden">{reason.content}</p>
           </div>
         );
       })}

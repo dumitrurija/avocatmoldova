@@ -14,14 +14,16 @@ const App = () => {
   return (
     <div className="pb-24 sm:pb-0">
       <Navbar />
-      <Hero />
-      <Services />
-      <AboutMe />
-      <WhyChooseMe />
-      <Testimonials />
-      <GoogleProfile />
-      <FAQ />
-      <Contact />
+      <main id="main-content">
+        <Hero />
+        <Services />
+        <AboutMe />
+        <WhyChooseMe />
+        <Testimonials />
+        <GoogleProfile />
+        <FAQ />
+        <Contact />
+      </main>
       <Footer />
       <StickyContact />
     </div>
